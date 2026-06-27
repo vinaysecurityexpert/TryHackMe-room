@@ -1,2 +1,2 @@
 # TryHackMe-room
-All the free rooms I did on TryHackMe website 
+All the free rooms I completed on TryHackMe website 
