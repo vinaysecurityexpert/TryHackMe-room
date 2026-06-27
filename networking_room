@@ -1,0 +1,42 @@
+Hi everyone! 
+This is an introductory networking room at TryHackMe . There are total 9 tasks but 2 tasks are not important .
+I will share my learnings from each task.
+So we start with task-2.
+
+## Task-2
+
+-> The OSI model - an overview
+- OSI model - basically it is a conceptual framework that is used to describe how data is transmitted in a seven layer architecture
+
+-> Layers of OSI model :-
+- Application layer
+- Presentation layer
+- Session layer
+- Transport layer
+- Network layer
+- Data link layer
+- Physical layer
+
+# Data Flows in the OSI Model :-
+When we transfer information from one device to another, it travels through 7 layers of OSI model.
+First data travels down through 7 layers from the sender's end and then climbs back 7 layers on the receiver's end.
+Data flows through the OSI model in a step-by-step process:
+
+Application Layer: Applications create the data.
+Presentation Layer: Data is formatted and encrypted.
+Session Layer: Connections are established and managed.
+Transport Layer: Data is broken into segments for reliable delivery.
+Network Layer: Segments are packaged into packets and routed.
+Data Link Layer: Packets are framed and sent to the next device.
+Physical Layer: Frames are converted into bits and transmitted physically.
+
+# Application layer -
+It is like an interface that interacts between software user and the network.
+there are several things that happens in this in order :-
+- user interface - user acts as a window for network based applications such as browser or web clients to access network services.
+- core protocols - important protocols are used in this like DNS,SMTP,FTP,HTTPS.
+- network virtual terminal - enables users to log into and interacts with remote hosts.
+- File transfer, access and management - provides the framework for users to retrieve, manage and manipulate files in remote computers.
+- Directory sevices - provides structured and queryable interface for authentication, authorization and for resource lookup.
+
+example- accessing the website on browser.
