@@ -33,10 +33,264 @@ Physical Layer: Frames are converted into bits and transmitted physically.
 # Application layer -
 It is like an interface that interacts between software user and the network.
 there are several things that happens in this in order :-
-- user interface - user acts as a window for network based applications such as browser or web clients to access network services.
-- core protocols - important protocols are used in this like DNS,SMTP,FTP,HTTPS.
-- network virtual terminal - enables users to log into and interacts with remote hosts.
-- File transfer, access and management - provides the framework for users to retrieve, manage and manipulate files in remote computers.
-- Directory sevices - provides structured and queryable interface for authentication, authorization and for resource lookup.
+- user interface: user acts as a window for network based applications such as browser or web clients to access network services.
+- core protocols: important protocols are used in this like DNS,SMTP,FTP,HTTPS.
+- network virtual terminal: enables users to log into and interacts with remote hosts.
+- File transfer, access and management: provides the framework for users to retrieve, manage and manipulate files in remote computers.
+- Directory sevices: provides structured and queryable interface for authentication, authorization and for resource lookup.
 
 example- accessing the website on browser.
+
+# Presentation layer -
+This layer ensures that the data is in correct format so it can be easily understand by receiving computer
+it also handles any encryption, compression, or other transformations to the data. Also called translation layer
+- Translation: It extracts data from the Application Layer and converts it into a standardized format for network transmission, bridging differences in data representation between different systems.
+- Standards & Formats: Handles the encoding of media using standards such as JPEG, MPEG, and GIF.
+- Encryption/Decryption: Provides security by converting "plain text" into "ciphertext" (encryption) and back again (decryption) using key values. This process is typically handled by protocols like TLS/SSL.
+- Compression: Reduces the total number of bits required for transmission, which increases network efficiency and speed.
+
+# Session layer -
+This layer governing the opening, closing and security of communication channels between two devices. Acts as dialogue manager
+- Session Lifecycle: Manages the establishment, maintenance, and termination of connections between applications.
+- Authentication & Security: Ensures that the communicating parties are verified and the connection is secure.
+- Synchronization: Inserts checkpoints into the data stream. This allows a transfer to resume from the last saved point if a failure occurs, rather than restarting from the beginning.
+- Dialog Control: Directs whether communication is half-duplex (alternating) or full-duplex (simultaneous).
+
+# Transport layer -
+It is responsible for end to end communication between two devices. It ensures data is transmitted securely by selecting appropriate transport protocol (TCP or UDP).
+- Selects the transport protocol: Chooses TCP for reliable communication or UDP for faster communication based on application requirements.
+- Segments the data: Breaks large messages into smaller units (segments in TCP and datagrams in UDP) to make transmission easier and more efficient.
+- Provides reliable communication (TCP): Establishes a connection, checks for errors, retransmits lost data, and ensures packets arrive in the correct order.
+- Supports fast communication (UDP): Sends data without establishing a connection, making it faster but without guaranteeing delivery or packet order.
+- Used by different applications: TCP is commonly used for web browsing, email, and file transfers, while UDP is preferred for video streaming, online gaming, and VoIP where speed is more important than reliability.
+
+# Network layer -
+This layer manages data transmission between hosts across different networks by handling logical addressing and path finding
+- Uses logical addressing: Identifies devices using IP addresses (e.g., 192.168.1.1).
+- Determines the best route: Finds the most efficient path for data to travel across networks.
+- Handles packet forwarding: Sends data packets from one network to another until they reach the destination.
+- Supports network communication: Enables communication between devices on different networks, including the Internet.
+- Uses IPv4/IPv6: The most common logical addressing system is IPv4, while IPv6 is the newer version with a larger address space.
+
+# Data link layer -
+It serves as the bridge between physical hardware and logical network, ensuring reliable node to node delivery of data
+- Data Packaging (Framing): At this layer, data packets received from the Network layer are divided into manageable units called Frames. This is done by adding specific "start" and "stop" bits so the receiver can recognize where one unit of data ends and the next begins.
+- Addressing and Hardware: The DLL uses MAC addresses (Physical Addressing) to identify hosts. It encapsulates the sender’s and receiver’s MAC addresses into the frame header. Common devices operating here are Switches and Bridges.
+- Sublayers:
+Logical Link Control (LLC): Manages flow and error control while acting as an interface for upper-layer protocols.
+Media Access Control (MAC): Determines how devices physically access the transmission medium and handles hardware addressing.
+- Error Control: It detects and retransmits damaged or lost frames to maintain data integrity.
+- Flow Control: It synchronizes the data rate between a fast sender and a slower receiver to prevent data "bottlenecks" or loss.
+- Access Control: When multiple devices share the same communication channel, the MAC sublayer dictates which device has the right to transmit at any given time to avoid collisions.
+
+# Physical layer -
+It is the foundation of the OSI model, acting as the bridge for actual physical connections between devices. Its primary mission is the transmission of raw, unstructured bitstreams over a physical medium from one node to the next.
+- Core Responsibility: It manages the hardware-level transmission of individual bits. When receiving data, it translates incoming physical signals back into digital 0s and 1s to be processed by the Data Link layer.
+- Essential Hardware: Common devices operating at this level include Hubs, Repeaters, Modems, and Cables.
+- Bit Synchronization: It ensures the sender and receiver are "in sync" by providing a clock signal that controls the timing of bit transmission.
+- Bit Rate Control: It dictates the transmission speed, defined as the number of bits sent per second.
+- Physical Topologies: It defines the structural layout of the network, such as Bus, Star, or Mesh configurations.
+- Transmission Mode: It determines the direction of data flow, utilizing modes like Simplex (one-way), Half-Duplex (two-way, one at a time), or Full-Duplex (simultaneous two-way)
+
+Imp qestions
+
+Which layer would choose to send data over TCP or UDP? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 4
+
+Which layer checks received information to make sure that it hasn't been corrupted? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 2
+
+In which layer would data be formatted in preparation for transmission? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 2
+
+Which layer transmits and receives data? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 1
+
+Which layer encrypts, compresses, or otherwise transforms the initial data to give it a standardised format? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 6
+
+Which layer tracks communications between the host and receiving computers? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 5
+
+Which layer accepts communication requests from applications? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 7
+
+Which layer handles logical addressing? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 3
+
+When sending data over TCP, what would you call the "bite-sized" pieces of data? 
+
+Correct Answer: Segments
+
+[Research] Which layer would the FTP protocol communicate with? Answer with the number of the layer: e.g. if the answer would be "the application layer", then you would enter "7".
+
+Correct Answer: 7
+
+Which transport layer protocol would be best suited to transmit a live video? 
+
+Correct Answer: UDP
+
+## Task 3
+
+Encapsulation & De-encapsulation
+
+1. Definition:
+- Encapsulation is the process of adding protocol-specific headers (and a trailer at the Data Link Layer) to data as it moves from the Application Layer (Layer 7) down to the Physical Layer (Layer 1) for transmission.
+- De-encapsulation is the reverse process, where the receiving device removes the headers and trailer layer by layer until the original data reaches the application.
+
+2. Important Points
+- Each OSI layer adds its own header containing information required for that layer's function.
+- The Data Link Layer adds both a header and a trailer; the trailer is used for error detection (e.g., FCS/CRC).
+- The Network Layer header contains the source and destination IP addresses.
+- The Transport Layer header contains protocol-specific information such as TCP/UDP, port numbers, sequence numbers (TCP), etc.
+- As data moves down the OSI model, its name changes:
+  Layers 7–5: Data
+  Layer 4: Segment (TCP) / Datagram (UDP)
+  Layer 3: Packet
+  Layer 2: Frame
+  Layer 1: Bits
+- During de-encapsulation, each receiving layer removes the information added by its corresponding sending layer.
+- Encapsulation ensures that each layer performs its own task independently, making networking modular and easier to troubleshoot.
+- It provides a standardized communication process, allowing devices from different manufacturers and operating systems to communicate seamlessly.
+- The added headers contain important information for routing, addressing, sequencing, flow control, and error checking.
+- Without encapsulation and de-encapsulation, reliable communication over networks would not be possible.
+
+Imp questions
+
+How would you refer to data at layer 2 of the encapsulation process (with the OSI model)?
+
+Correct Answer: Frames
+
+How would you refer to data at layer 4 of the encapsulation process (with the OSI model), if the UDP protocol has been selected?
+
+Correct Answer: Datagrams
+
+What process would a computer perform on a received message?
+
+Correct Answer: De-encapsulation
+
+Which is the only layer of the OSI model to add a trailer during encapsulation?
+
+Correct Answer: Data Link
+
+Does encapsulation provide an extra layer of security (Aye/Nay)?
+
+Correct Answer: Aye
+
+## Task 4
+
+TCP/IP Model
+
+1. Definition
+The TCP/IP (Transmission Control Protocol/Internet Protocol) model is the standard networking model used on the Internet. It consists of 4 layers that define how data is transmitted, routed, and received between devices.
+2. Important Points
+- The TCP/IP model has 4 layers:
+  Application
+  Transport
+  Internet
+  Network Interface
+- It is the practical networking model used in real-world communication and forms the basis of the Internet.
+- The Application layer combines the functions of the Application, Presentation, and Session layers of the OSI model.
+- The Internet layer is equivalent to the Network layer in the OSI model and uses the Internet Protocol (IP) for logical addressing and routing.
+- The Network Interface layer combines the Data Link and Physical layers of the OSI model.
+- Uses the same encapsulation and de-encapsulation process as the OSI model.
+- Each layer adds a header during encapsulation and removes it during de-encapsulation.
+- Based on a suite of networking protocols, including TCP, IP, UDP, HTTP, HTTPS, FTP, SMTP, DNS, DHCP, and more.
+
+TCP (Transmission Control Protocol)
+  
+Definition
+- TCP is a connection-oriented, reliable transport protocol that ensures data is delivered accurately, completely, and in the correct order.
+Important Points
+- Establishes a connection before transmitting data.
+- Uses the Three-Way Handshake to create a reliable connection.
+- Provides error detection and error recovery.
+- Retransmits lost or corrupted packets.
+- Ensures packets arrive in the correct order.
+- Uses acknowledgements (ACKs) to confirm successful delivery.
+- Performs flow control and congestion control.
+- Used for HTTP/HTTPS, FTP, Email (SMTP/IMAP/POP3), SSH, and other applications requiring reliability.
+
+Three-Way Handshake
+
+Definition
+- The Three-Way Handshake is the process TCP uses to establish a reliable connection between a client and a server before data transfer begins.
+- Steps
+  SYN → Client sends a synchronization request to the server.
+  SYN-ACK → Server acknowledges the request and sends its own synchronization request.
+  ACK → Client acknowledges the server, and the connection is established.
+
+Flow:
+
+Client                  Server
+  SYN   -------------->
+       <--------------  SYN + ACK
+  ACK   -------------->
+Connection Established
+
+TCP/IP vs OSI Model (layers)
+
+OSI Model(7)	    TCP/IP Model(4)
+Application	      Application
+Presentation	    Application
+Session	          Application
+Transport	        Transport
+Network	          Internet
+Data Link	        Network Interface
+Physical	        Network Interface
+
+History 
+
+- TCP/IP was developed by the U.S. Department of Defense (DoD) in 1982.
+- It became the standard protocol suite for Internet communication.
+- The OSI Model was later developed by the International Organization for Standardization (ISO).
+- TCP/IP is used in real-world networking, while the OSI model is mainly used for learning, designing, and troubleshooting networks.
+
+Imp questions
+
+Which model was introduced first, OSI or TCP/IP?
+
+Correct Answer: TCP/IP
+
+Which layer of the TCP/IP model covers the functionality of the Transport layer of the OSI model (Full Name)?
+
+Correct Answer: Transport
+
+Which layer of the TCP/IP model covers the functionality of the Session layer of the OSI model (Full Name)?
+
+Correct Answer: Application
+
+The Network Interface layer of the TCP/IP model covers the functionality of two layers in the OSI model. These layers are Data Link, and?.. (Full Name)?
+
+Correct Answer: Physical
+
+Which layer of the TCP/IP model handles the functionality of the OSI network layer?
+
+Correct Answer: Internet
+
+What kind of protocol is TCP?
+
+Correct Answer: Connection-based
+
+What is SYN short for?
+
+Correct Answer: Synchronise
+
+What is the second step of the three way handshake?
+
+Correct Answer: SYN/ACK
+
+What is the short name for the "Acknowledgement" segment in the three-way handshake?
+
+Correct Answer: ACK
+
+## Task 5
+
